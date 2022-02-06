@@ -1,0 +1,40 @@
+name: update
+
+# this workflow runs at 02:00 UTC every day
+on:
+  schedule:
+  - cron: "0 2 * * *"
+
+  # Allows to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.WORKFLOW_SECRET }}
+      
+      - name: Run update script
+        run: |
+          cd extractor
+          npm install
+          node main.js
+        shell: pwsh
+
+      - name: Git config
+        run: |
+            git config --global user.name 'Update Bot'
+            git config --global user.email 'noreply@werder.space'
+
+      - name: Git commit
+        shell: pwsh
+        run: |
+          $message = "Updated"
+          if(git status --porcelain ) {
+              git commit -am $message; git push
+          } else {
+              Write-Host "no changes"
+          }
