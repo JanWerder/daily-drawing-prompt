@@ -20,9 +20,11 @@
 </script>
 
 <div class="flexWrapper">
-	<h1>Daily Drawing Prompt</h1>
-	<p>{prompts[getDate()] != undefined ? prompts[getDate()] : "⌛"}</p>
-	<small>All prompts are made by <a href="https://www.simpledailydrawing.com/">Simple Daily Drawing.</a></small>
+	<div class="centerWrapper">
+		<h1>Daily Drawing Prompt</h1>
+		<p>{prompts[getDate()] != undefined ? prompts[getDate()] : "⌛"}</p>
+		<small>All prompts are made by <a href="https://www.simpledailydrawing.com/">Simple Daily Drawing.</a></small>
+	</div>
 </div>
 
 <style>
@@ -31,18 +33,35 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		height: 98vh;
 		font-family: "Jost", sans-serif;
+		font-size: 2em;
+	}
+
+	.centerWrapper{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 1em;
+		border: 0.5em solid black;
+		background-color: white;
 	}
 
 	h1 {
 		font-weight: 900;
+		margin-bottom: 0em;
+		margin-top: 0em;
+		text-decoration: underline;
+		text-decoration-style: solid;
 	}
 
 	p {
 		font-weight: 600;
+		font-size: 1.5em;
 	}
 	small {
 		font-weight: light;
+		font-size: 0.5em;
 	}
 </style>
