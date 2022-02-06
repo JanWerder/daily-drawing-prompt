@@ -33,10 +33,9 @@ jobs:
       - name: Git commit
         shell: pwsh
         run: |
-          $message = "Updated"
           git add static/*
           if(git status --porcelain ) {
-              git commit -am $message; git push
+              git commit -am "Updated"; git push
           } else {
               Write-Host "no changes"
           }
