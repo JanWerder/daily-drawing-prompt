@@ -22,7 +22,7 @@ if (fs.existsSync(`../static/${year}-${month}.json`)) {
 	}
 }
 
-var monthText = date.toLocaleString("en-us", { month: "long" }).toLowerCase();
+var monthText = (new Date(`${year}-${month}-01`)).toLocaleString("en-us", { month: "long" }).toLowerCase();
 const currentMonthUrl = `https://www.simpledailydrawing.com/drawing-prompts/${monthText}-${year}`;
 
 got(currentMonthUrl)
