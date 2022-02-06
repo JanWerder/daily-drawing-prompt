@@ -1,20 +1,6 @@
-# create-svelte
+# daily-drawing-prompt
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
+This project display a daily drawing prompt. The content is extracted from <a href="https://www.simpledailydrawing.com/">Simple Daily Drawing</a> and stored in this repository. The app uses Sveltekit for the frontend, which loads the prompt from a json file deployed with the frontend. The content is added by the extractor script via Github Actions.
 
 ## Developing
 
@@ -26,15 +12,3 @@ npm run dev
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment.
