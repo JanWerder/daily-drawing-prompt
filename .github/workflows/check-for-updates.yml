@@ -35,7 +35,7 @@ jobs:
         run: |
           $message = "Updated"
           if(git status --porcelain ) {
-              git commit -am $message; git push
+              git add static/*; git commit -am $message; git push
           } else {
               Write-Host "no changes"
           }
