@@ -14,8 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.WORKFLOW_SECRET }}
+      - uses: actions/setup-node@v2
       
       - name: Run update script
         run: |
