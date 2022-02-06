@@ -23,7 +23,8 @@
 	<div class="centerWrapper">
 		<h1>Daily Drawing Prompt</h1>
 		<p>{prompts[getDate()] != undefined ? prompts[getDate()] : "⌛"}</p>
-		<small>All prompts are made by <a href="https://www.simpledailydrawing.com/">Simple Daily Drawing.</a></small>
+		<small>All prompts are made by <a href="https://www.simpledailydrawing.com/">Simple Daily Drawing</a>.</small>
+		<small>The source is avaible at <a href="https://github.com/JanWerder/daily-drawing-prompt">Github</a>.</small>
 	</div>
 </div>
 
@@ -38,7 +39,7 @@
 		font-size: 2em;
 	}
 
-	.centerWrapper{
+	.centerWrapper {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
